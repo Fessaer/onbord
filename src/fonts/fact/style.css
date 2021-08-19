@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Fact';
+    src: local('Fact Black'), local('Fact-Black'),
+        url('Fact-Black.woff2') format('woff2'),
+        url('Fact-Black.woff') format('woff'),
+        url('Fact-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
