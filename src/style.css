@@ -60,11 +60,8 @@ button:hover {
   top: 157px;
   left: -604px
 }
-.widget-1_text-cantainer > p:first-child {
-  
-}
 .widget-1_text-cantainer {
-  margin: 2em 0px 1.9em 3em;
+  margin: 4em 0px 3em 4em;
 }
 .widget-1_text-cantainer p:not(:first-child) {
   margin: 0px 0px 2em 0px;
@@ -210,7 +207,7 @@ button:hover {
 
 .widget-3 {
   /* box-sizing: border-box; */
-  padding: 2.5em 2.5em 2em 2.5em;
+  padding: 4em 4em 2em 4em;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -228,7 +225,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 34px;
+  margin-bottom: 2em;
 }
 .widget-3 > :nth-child(2) > img {
   margin-right: 3em;
@@ -241,12 +238,10 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 2em;
 }
 .widget-3 > :nth-child(3) > img {
   margin: 0px 2.5em 0px -11px;
-}
-.widget-3 > :nth-child(3) div:first-child p {
-  
 }
 .loga-stars-2021-07-23-12-02-24-644 {
   display: flex;
@@ -260,8 +255,6 @@ button:hover {
 .widget-3 > :nth-child(3) > div {
   padding-right: 0.4em;
 }
-
-
 .widget-3 > :nth-child(3) > div p:last-child {
   line-height: 20px;
   margin: 0px;
@@ -269,9 +262,7 @@ button:hover {
   font-family: Fact, Arial, sans-serif;
   font-weight: normal;
 }
-
 .widget-3 button {
-  margin-left: -90px;
   cursor: pointer;
   width: 183px;
   height: 48px;
@@ -285,17 +276,16 @@ button:hover {
 .widget-3 button > p {
   font-size: 20px;
   margin: 0px;
-  font-weight: 700 !important;
+  font-weight: normal !important;
 }
 .widget-3 > :nth-child(4) {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 .widget-3 > :nth-child(3) > div:last-child {
   margin-left: 2em;
-  padding-top: 0.5em;
 }
 
 /* ========================================================
