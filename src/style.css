@@ -45,6 +45,12 @@ button:hover {
   -moz-box-shadow: 0px 1px 5px 0px rgba(34, 60, 80, 0.29) !important;
   box-shadow: 0px 1px 5px 0px rgba(34, 60, 80, 0.29) !important;
 }
+button:active {
+  -webkit-box-shadow: 1px 0px 4px 1px rgba(34, 60, 80, 0.29) !important;
+  -moz-box-shadow: 1px 0px 4px 1px rgba(34, 60, 80, 0.29) !important;
+  box-shadow: 1px 0px 4px 1px rgba(34, 60, 80, 0.29) !important;
+  background-color: #f5d400 !important;
+}
 .widget-1 {
   display: flex;
   justify-content: space-between;
