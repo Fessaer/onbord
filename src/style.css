@@ -614,11 +614,68 @@ button:active {
   font-weight: 700;
 }
 
+/* ========================================================
+======================================================== */
+
+.container-widget-9 {
+  background: #F0F7FA;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  border-radius: 16px;
+  width: 268px;
+  height: 137px;
+}
+.rectangle-widget-9 {
+  content:'';
+  position: absolute;
+  left: 59%;
+  bottom: -110px;
+  margin-left: 15px;
+  border: 15px solid transparent;
+  border-top: 30px solid #F0F7FA;
+}
+.widget-9 {
+  padding: 1.3em 0.5em 1.6em 0.5em ;
+  display: flex;
+  background: #F0F7FA;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.widget-9 > div:nth-child(-n+2) > p {
+  padding-left: 0.8em;
+}
+
+.widget-9 > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+.widget-9 > div:last-child > div:first-child {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+.widget-9 span {
+  font-weight: 700;
+}
+.class-widget-9 {
+  color: white;
+  width: 268px;
+  margin-left: -8px;
+  display: flex;
+}
+.class-widget-9 > img {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
 /* ==================================================================================
 =============================== @media ================================================
 ===================================================================================== */
 
-@media all and (max-height: 1050px) {
+@media all and (max-height: 850px) {
   .text-title-large {
     font-size: 24px !important;
     font-family: Fact, Arial, sans-serif;
@@ -815,5 +872,31 @@ button:active {
   }
   .rectangle-widget-5 {
     bottom: -130px;
+  }
+  .class-widget-9 {
+    color: white;
+    width: 230px;
+    margin-left: -22x;
+  }
+  .class-widget-9 > img {
+    flex: 0 0 auto;
+    width: 230px;
+  }
+  .container-widget-9 {
+    border-radius: 16px !important;
+    width: 230px;
+    height: 121px;
+  }
+  .rectangle-widget-9 {
+    bottom: -100px;
+    left: 56%;
+  }
+  .widget-9 {
+    padding: 1.2em 0.5em 1.5em 0.5em ;
+    display: flex;
+    background: #F0F7FA;
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
