@@ -675,7 +675,7 @@ button:active {
 =============================== @media ================================================
 ===================================================================================== */
 
-@media all and (max-height: 850px) {
+@media all and (max-height: 1050px) {
   .text-title-large {
     font-size: 24px !important;
     font-family: Fact, Arial, sans-serif;
