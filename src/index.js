@@ -1,40 +1,48 @@
 
-widgetFunction = (indexOnbord, fn) => {
-$(function () {
-    var arr = [
-        widget0,
-        widget1,
-        widget2,
-        widget3,
-        widget4,
-        widget5,
-    ];
-    $('body').append(arr[indexOnbord]);
-    var atr = $('.hiden-onbord').attr('data-active-onboard');
-    $('body').on('click', '.footer-link-widget', function (e) {
-        e.preventDefault();
-        $('.hiden-onbord').remove();
-        fn(atr);
-    });
-    $('body').on('click', '.btn-onbord', function () {
-        var changeOnbord = (atr) => {
-            fn(atr)
-            var atrIsNumber = Number(atr)
-            arr.forEach((item, index) => {
-                if (atrIsNumber === index && index + 1 <= arr.length) {
-                    $('.hiden-onbord').remove();
-                    var newIten = arr[index + 1];
-                    $('body').append(newIten);
-                }
-            })
-        }
-        var atr = $('.hiden-onbord').attr('data-active-onboard');
-        changeOnbord(atr);
-    });
-});
+widgetFunction = (obj) => {
+  $(function () {
+    var arr = [widget0, widget1, widget2, widget3, widget4, widget5];
+    $('body').append(arr[obj.index]);
 
-var widget0 = `
-    <div class="widget-1 hiden-onbord" data-active-onboard='0'>
+    const cb = (att = null) => {
+        let targetElement = document.querySelector('.hiden-onbord');
+        if (att === null) {
+            return Number(targetElement.dataset.activeonbord) + 1;
+        } else {
+            return att + 1;
+        }
+    };
+
+    $('body').on('click', '.footer-link-widget', function (e) {
+      e.preventDefault();
+      obj.callback2(cb());
+      $('.hiden-onbord').remove();
+    });
+
+    $('body').on('click', '.btn-onbord', function (e) {
+      e.preventDefault();
+      var changeOnbord = (atr) => {
+        var atrIsNumber = Number(atr);
+        arr.forEach((item, index) => {
+            if (atrIsNumber === index && index + 1 < arr.length) {
+                $('.hiden-onbord').remove();
+                var newIten = arr[index + 1];
+                $('body').append(newIten);
+                obj.callback(cb());
+            }
+            if (atrIsNumber === index && index + 1 === arr.length) {
+                obj.callback(cb(index));
+                $('.hiden-onbord').remove();
+            }
+        });
+      };
+      var atr = $('.hiden-onbord').attr('data-activeOnbord');
+      changeOnbord(atr);
+    });
+  });
+
+  var widget0 = `
+    <div class="widget-1 hiden-onbord" data-activeOnbord="0">
         <div class="widget-1_text-cantainer">
             <p class="text-title-large">
                 Добро пожаловать в портал <br>
@@ -71,7 +79,7 @@ var widget0 = `
         </div>
     </div>`;
 
-var widget1 = `<div class="container-widget-2 hiden-onbord" data-active-onboard='1'>
+  var widget1 = `<div class="container-widget-2 hiden-onbord" data-activeOnbord='1'>
     <div class="rectangle-widget-2">
     </div>
         <div class="widget-2">
@@ -101,7 +109,7 @@ var widget1 = `<div class="container-widget-2 hiden-onbord" data-active-onboard=
         </div>
     </div>
     </div>
-    <div class="container-widget-9 hiden-onbord" data-active-onboard='8'>
+    <div class="container-widget-9 hiden-onbord" data-activeOnbord='8'>
         <div class="rectangle-widget-9">
         </div>
         <div class="widget-9">
@@ -118,8 +126,8 @@ var widget1 = `<div class="container-widget-2 hiden-onbord" data-active-onboard=
         </div>
     </div>`;
 
-var widget2 = `
-    <div class="container-widget-4 hiden-onbord" data-active-onboard='2'>
+  var widget2 = `
+    <div class="container-widget-4 hiden-onbord" data-activeOnbord='2'>
         <div class="rectangle-widget-4">
         </div>
         <div class="widget-4">
@@ -154,8 +162,8 @@ var widget2 = `
     </div>
     </div>`;
 
-var widget3 = `
-    <div class="container-widget-5 hiden-onbord" data-active-onboard='3'>
+  var widget3 = `
+    <div class="container-widget-5 hiden-onbord" data-activeOnbord='3'>
     <div class="rectangle-widget-5">
     </div>
         <div class="widget-5">
@@ -192,8 +200,8 @@ var widget3 = `
         </div>
     </div>`;
 
-var widget4 = `
-    <div class="container-widget-6 hiden-onbord" data-active-onboard='4'>
+  var widget4 = `
+    <div class="container-widget-6 hiden-onbord" data-activeOnbord='4'>
         <div class="rectangle-widget-6">
         </div>
         <div class="widget-6">
@@ -258,8 +266,8 @@ var widget4 = `
             </div>
         </div>
     </div> `;
-var widget5 = `
-    <div class="widget-3 hiden-onbord" data-active-onboard='5'>
+  var widget5 = `
+    <div class="widget-3 hiden-onbord" data-activeOnbord='5'>
         <p class="text-title-large2">
             Ура! Теперь Вы знаете всё необходимое!
         </p>
@@ -307,7 +315,7 @@ var widget5 = `
             </button>
         </div>
     </div>`;
-}
-
-var callback = (arg) => console.log(arg)
-widgetFunction(0, callback);
+};
+var fn2 = (arg) => console.log(arg, 'callbak2');
+var fn1 = (arg) => console.log(arg, 'callback');
+widgetFunction({ index: 0, callback: fn1, callback2: fn2 });
