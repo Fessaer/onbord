@@ -900,3 +900,6 @@ button:active {
     justify-content: space-between;
   }
 }
+.hiden-onbord {
+  /* visibility: hidden; */
+}
